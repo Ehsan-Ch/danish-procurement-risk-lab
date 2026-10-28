@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "harbor-procurement-risk-lab"
+version = "1.0.0"
+description = "Scenario-constrained Danish flexible-load procurement research"
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+[tool.setuptools.packages.find]
+include = ["harbor*"]
+[project.scripts]
+harbor = "harbor.cli:main"
